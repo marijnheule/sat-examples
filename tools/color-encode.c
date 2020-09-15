@@ -2,6 +2,8 @@
 #include <stdlib.h>
 
 int main (int argc, char** argv) {
+  if (argc < 3) printf("Usage: %s graph.edge colors\n", argv[0]), exit(1);
+
   FILE* graph  = fopen (argv[1], "r");
   int i, j, a, b, nVertex, nEdge, nColor = atoi  (argv[2]);
   fscanf (graph, " p edge %i %i ", &nVertex, &nEdge);
