@@ -21,8 +21,8 @@ for x in range(1,nodes+1):
     id = id + 1
   # each node can be assigned a value between 1 and k  
   amo = CardEnc.atmost(v, encoding=EncType.pairwise)
-  for c in amo.clauses: # amo
-     cnf.append(c)
+ for c in amo.clauses: # amo
+    cnf.append(c)
   cnf.append(v) # alo
   variables.append(v)
 
@@ -36,11 +36,11 @@ for line in content:
       cnf.append([-variables[int(edge[1])-1][color],-variables[int(edge[2])-1][color]])
 
 s.append_formula(cnf.clauses)
-cnf.to_file('color.cnf')
+cnf.to_file('color.cnf') #write to file
 print(s.solve())
 print(s.get_model())
 # decoding the model
-if len(s.get_model()) > 0:
+if s.get_model() != None:
   for x in range(0,nodes):
     for color in range(0, k):
       if s.get_model()[variables[x][color]-1] > 0:
