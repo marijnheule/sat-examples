@@ -230,7 +230,9 @@ int main (int argc, char** argv) {
 	}
         if (quiet_mode == 0) {
 #ifdef CUBE
-          nodeCount = getNodes ();
+//        needs fixing... now results 0
+//          nodeCount = 
+          getNodes ();
 #endif
           printf ("c main():: nodeCount: %i\n", nodeCount);
           printf ("c main():: dead ends in main: %i\n", mainDead);
