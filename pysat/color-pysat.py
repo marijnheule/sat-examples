@@ -19,9 +19,9 @@ for x in range(1,nodes+1):
   for color in range(0, k):
     v.append(id)
     id = id + 1
-  # each node can be assigned a value between 1 and k  
+  # each node can be assigned a value between 1 and k
   amo = CardEnc.atmost(v, encoding=EncType.pairwise)
- for c in amo.clauses: # amo
+  for c in amo.clauses: # amo
     cnf.append(c)
   cnf.append(v) # alo
   variables.append(v)
