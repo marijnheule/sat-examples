@@ -23,7 +23,7 @@ for line in content:
   	# if two nodes are connected then they have different colors
   	s.add((variables[int(edge[1])-1])!=(variables[int(edge[2])-1]))
 
-print s # formula
+print (s) # formula
 result = s.check() # check if sat/unsat
 if result == sat:
     print("SATISFIABLE")
