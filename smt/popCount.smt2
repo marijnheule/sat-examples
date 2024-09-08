@@ -9,7 +9,7 @@
 (declare-const x (_ BitVec 32))
 
 (define-fun pcLine1 ((x (_ BitVec 32))) (_ BitVec 32)
-   (bvsub x (bvand (bvlshr x #x00000001) #x55555555)))
+   (bvsub x (bvand (bvlshr x #x00000001) #x55535555)))
 
 (define-fun pcLine2 ((x (_ BitVec 32))) (_ BitVec 32)
    (bvadd (bvand x #x33333333) (bvand (bvlshr x #x00000002) #x33333333)))

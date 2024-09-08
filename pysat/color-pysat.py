@@ -1,8 +1,8 @@
-from pysat.solvers import Glucose3
+from pysat.solvers import Cadical195
 from pysat.card import *
 import sys
 
-s = Glucose3()
+s = Cadical195()
 cnf = CNF()
 
 with open(sys.argv[1]) as f:
@@ -44,4 +44,4 @@ if s.get_model() != None:
   for x in range(0,nodes):
     for color in range(0, k):
       if s.get_model()[variables[x][color]-1] > 0:
-        print("node=",x+1,"is assigned color=",color+1)
+        print("node",x+1,"is assigned color",color+1)
